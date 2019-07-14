@@ -28,8 +28,8 @@ def UpdateCheck():
         print('[+]Update Check disabled!')
 def movie_lists():
     if config['directory_capture']['switch'] == '0' or config['directory_capture']['switch'] == '':
-        a2 = glob.glob(r".\*.mp4")
-        b2 = glob.glob(r".\*.avi")
+        a2 = glob.glob(r"." + os.path.sep + "*.mp4")
+        b2 = glob.glob(r"." + os.path.sep + "*.avi")
         c2 = glob.glob(r".\*.rmvb")
         d2 = glob.glob(r".\*.wmv")
         e2 = glob.glob(r".\*.mov")
@@ -119,11 +119,11 @@ def getNumber(filepath):
 
 def RunCore():
     if os.path.exists('core.py'):
-        os.system('python core.py' + '   "' + i + '" --number "'+getNumber(i)+'"')     #从py文件启动（用于源码py）
+        os.system('python3 core.py' + '   "' + i + '" --number "'+getNumber(i)+'"')     #从py文件启动（用于源码py）
     elif os.path.exists('core.exe'):
         os.system('core.exe' + '   "' + i + '" --number "'+getNumber(i)+'"')           #从exe启动（用于EXE版程序）
     elif os.path.exists('core.py') and os.path.exists('core.exe'):
-        os.system('python core.py' + '   "' + i + '" --number "' + getNumber(i) + '"') #从py文件启动（用于源码py）
+        os.system('python3 core.py' + '   "' + i + '" --number "' + getNumber(i) + '"') #从py文件启动（用于源码py）
 
 if __name__ =='__main__':
     print('[*]===========AV Data Capture===========')

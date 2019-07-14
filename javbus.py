@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import re
 import requests #need install
 from pyquery import PyQuery as pq#need install
